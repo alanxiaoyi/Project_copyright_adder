@@ -56,13 +56,14 @@ namespace WindowsFormsApplication1
             this.bodylabel = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(399, 495);
+            this.button1.Location = new System.Drawing.Point(460, 481);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
+            this.button1.Size = new System.Drawing.Size(130, 27);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add License";
             this.button1.UseVisualStyleBackColor = true;
@@ -179,9 +180,9 @@ namespace WindowsFormsApplication1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(577, 495);
+            this.button4.Location = new System.Drawing.Point(674, 518);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(75, 48);
             this.button4.TabIndex = 17;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
@@ -196,12 +197,23 @@ namespace WindowsFormsApplication1
             this.label5.TabIndex = 18;
             this.label5.Text = resources.GetString("label5.Text");
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(460, 529);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(130, 27);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Remove License";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(748, 568);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.bodylabel);
@@ -242,6 +254,7 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Label bodylabel;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button5;
     }
 }
 

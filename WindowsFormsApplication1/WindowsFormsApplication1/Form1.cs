@@ -24,6 +24,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+        bool isremove = false;       // determine if remove process not add
         string dir_path="..\\";
         string[] filter_array;
         public Form1()
@@ -36,6 +37,7 @@ namespace WindowsFormsApplication1
         /*button to add license*/
         private void button1_Click(object sender, EventArgs e)
         {
+            isremove = false;
             if (textBox2.Text == "" || textBox3.Text == "")
             {
                 MessageBox.Show("Start or end text is blank!");
@@ -205,7 +207,8 @@ namespace WindowsFormsApplication1
                     if (line == start)
                     {
                         find_start = true;
-                        wfile.WriteLine(start);
+                        if(isremove==false)
+                            wfile.WriteLine(start);
                         while ((line = rfile.ReadLine()) != null)
                         {
                             if (line == end)
@@ -214,8 +217,10 @@ namespace WindowsFormsApplication1
                                 break;
                             }
                         }
-
-                        wfile.Write("\n"+body+"\n");
+                        if (isremove == false)
+                            wfile.Write("\n" + body + "\n");
+                        else if(isremove==true && line==end)
+                            line = "";
                     }
                     if(line!=null)
                         wfile.WriteLine(line);
@@ -269,6 +274,19 @@ namespace WindowsFormsApplication1
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            isremove = true;
+            if (textBox2.Text == "" || textBox3.Text == "")
+            {
+                MessageBox.Show("Start or end text is blank!");
+                return;
+            }
+            CallNodesSelector();
+            MessageBox.Show("Complete!");
+
         }
 
     }
