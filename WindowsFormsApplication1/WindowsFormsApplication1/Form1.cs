@@ -36,6 +36,11 @@ namespace WindowsFormsApplication1
         /*button to add license*/
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox2.Text == "" || textBox3.Text == "")
+            {
+                MessageBox.Show("Start or end text is blank!");
+                return;
+            }
             CallNodesSelector();
             MessageBox.Show("Complete!");
             
@@ -147,6 +152,7 @@ namespace WindowsFormsApplication1
         {
 
           filter_array = Regex.Split(textBox1.Text, "\r\n");
+          filter_array = filter_array.Distinct().ToArray();
         }
 
        
