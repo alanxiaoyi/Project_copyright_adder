@@ -1,4 +1,15 @@
-﻿using System;
+/**************license begin*******************
+
+Copyright (c) 2012 Yipeng Wang
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+***************license end*********************/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +40,7 @@ namespace WindowsFormsApplication1
             MessageBox.Show("Complete!");
             
         }
-
+        //get the node that checked
         private void CallNodesSelector()
         {
             TreeNodeCollection nodes = this.treeView1.Nodes;
@@ -51,12 +62,8 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("quit?", "EXIT", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                Application.Exit();
-        }
 
+        //refresh button
         private void button2_Click(object sender, EventArgs e)
         {
             treeView1.Nodes.Clear();
@@ -176,11 +183,12 @@ namespace WindowsFormsApplication1
         /*find start and end, replace the license between them*/
         private void find_and_replace(string file_path, string start, string end, string body )
         {
+            if (File.Exists(file_path) != true) return;           //check if it is a file
             try
             {
 
                 StreamReader rfile = new StreamReader(file_path);
-                StreamWriter wfile = new StreamWriter("tmpfile");
+                StreamWriter wfile = new StreamWriter("./CopyRight_adder_tmpfile");
                 string line;
                 bool find_start=false;
                 bool find_end=false;
@@ -212,22 +220,22 @@ namespace WindowsFormsApplication1
                 if (find_start && find_end)
                 {
                     File.Delete(file_path);
-                    File.Move("tmpfile", file_path);
+                    File.Move("./CopyRight_adder_tmpfile", file_path);
 
                 }
                 else if (find_start == false && find_end == false)
                 {
-                    rfile = new StreamReader(file_path);
-                    wfile = new StreamWriter("tmpfile");
+                    StreamReader rfile1 = new StreamReader(file_path);
+                    StreamWriter wfile1 = new StreamWriter("./CopyRight_adder_tmpfile");
 
-                    wfile.WriteLine(start);
-                    wfile.WriteLine("\n"+body+"\n");
-                    wfile.WriteLine(end);
-                    wfile.Write(rfile.ReadToEnd());
+                    wfile1.WriteLine(start);
+                    wfile1.WriteLine("\n"+body+"\n");
+                    wfile1.WriteLine(end);
+                    wfile1.Write(rfile1.ReadToEnd());
+                    rfile1.Close();
+                    wfile1.Close();
                     File.Delete(file_path);
-                    File.Move("tmpfile", file_path);
-                    rfile.Close();
-                    wfile.Close();
+                    File.Move("./CopyRight_adder_tmpfile", file_path);
                 }
                 else
                 {

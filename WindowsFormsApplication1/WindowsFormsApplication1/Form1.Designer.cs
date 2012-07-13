@@ -1,4 +1,15 @@
-﻿namespace WindowsFormsApplication1
+/**************license begin*******************
+
+Copyright (c) 2012 Yipeng Wang
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+***************license end*********************/
+namespace WindowsFormsApplication1
 {
     partial class Form1
     {
@@ -49,7 +60,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(399, 531);
+            this.button1.Location = new System.Drawing.Point(399, 495);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 23);
             this.button1.TabIndex = 0;
@@ -168,7 +179,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(577, 530);
+            this.button4.Location = new System.Drawing.Point(577, 495);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 17;
@@ -181,7 +192,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(396, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(353, 306);
+            this.label5.Size = new System.Drawing.Size(353, 323);
             this.label5.TabIndex = 18;
             this.label5.Text = resources.GetString("label5.Text");
             // 

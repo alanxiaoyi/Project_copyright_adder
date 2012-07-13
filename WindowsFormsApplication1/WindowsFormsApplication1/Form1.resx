@@ -138,6 +138,7 @@ each source file. If found both, it will replace the
 content between them with license body. If found 
 no one, it will prepend the start, body and end in front
 of the source file. If found only one of them, it will 
-give a format error and do nothing to the file.</value>
+give a format error and do nothing to the file.
+Under MIT License</value>
   </data>
 </root>
