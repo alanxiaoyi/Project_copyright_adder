@@ -1,0 +1,10 @@
+********Copyright Adder Tool*********
+
+I created it using visual c# 2010 under .NET framework 4.0. I havn't make it up as a setup of something.
+
+If you have .netframework 4.0 on your windows, you can just run ./WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe for using.
+
+Or, you can use visual studio to open the project and build it by yourself.
+
+
+
